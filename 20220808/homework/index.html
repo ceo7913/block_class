@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    body {
+      /* body 기준으로 움직이려고 relative */
+      position: relative;
+      height: 100vh;
+    }
+
+    #content {
+      position: absolute;
+      /* 부모객체를 기준으로 무조건 무슨일이 있어도 정중앙 */
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      /* ----------------------------- */
+      width: 600px;
+      height: 600px;
+      border: 1px solid;
+    }
+
+    #loginPage {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #title {
+      text-align: center;
+      font-size: 50px;
+      color: palevioletred;
+    }
+
+    #loginPage img {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 600px;
+      height: 600px;
+      border: 1px solid;
+    }
+
+    #main {
+      display: none;
+    }
+
+    #page {
+      width: 100vw;
+      height: 100vh;
+    }
+
+    #header {
+      width: 600px;
+      height: 100px;
+      display: flex;
+      justify-content: center;
+    }
+
+    #popup {
+      background-color: thistle;
+      z-index: 100;
+      width: 400px;
+      height: 500px;
+    }
+  </style>
+  <body>
+    <div id="content">
+      <div id="loginPage">
+        <div id="title">★루피의 비밀공간★</div>
+        <img src="/homework/루피2.jpg" alt="로그인창 루피" />
+        <div id="login">
+          <label for="">아이디</label>
+          <input type="text" id="user" />
+
+          <label for="">비밀번호</label>
+          <input type="text" id="pw" />
+          <button id="loginBtn">로그인</button>
+        </div>
+      </div>
+      <div id="main">
+        <div id="popup">
+          <img src="/homework/루피.jpg" alt="" />
+          <label for="">오늘 하루동안 안보기</label>
+          <input type="checkbox" id="checkbox" />
+          <button id="closeBtn">닫기</button>
+        </div>
+        <div id="page">
+          <div id="header"></div>
+          <p>루피의 비밀공간</p>
+          <nav>
+            <a href="#">일기</a>
+            <a href="#">사진</a>
+            <a href="#">친구</a>
+          </nav>
+          <img src="/homework/루피3.jpg" alt="" />
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="/homework/app.js"></script>
+  <script>
+    checkbox.onclick = function () {
+      createCookie("jinnyCheck", checkbox.value, 1);
+    };
+
+    loginBtn.onclick = function () {
+      loginPage.style.display = "none";
+      main.style.display = "block";
+      // 세션 스토리지에 유저의 키와 값을 저장한다.
+      sessionStorage.setItem("userData", user.value);
+    };
+
+    closeBtn.onclick = function () {
+      popup.style.display = "none";
+    };
+  </script>
+</html>

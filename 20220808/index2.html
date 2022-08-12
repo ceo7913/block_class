@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <label for="">이름</label>
+    <input type="text" id="user" />
+
+    <label for="">비밀번호</label>
+    <input type="text" id="pw" />
+
+    <button id="login">로그인</button>
+    <a href="/index3.html">이동</a>
+  </body>
+  <script>
+    // 로그인 버튼을 눌렀을 때
+    login.onclick = function() {
+        // 세션 스토리지에 유저의 키와 값을 저장한다.
+        sessionStorage.setItem("userData", user.value);
+    };
+    console.log(sessionStorage.getItem("userData"));
+  </script>
+</html>

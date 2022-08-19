@@ -85,7 +85,7 @@ class User extends Sql.Model {
         // 이모티콘을 사용하고 싶으면 utf-8 뒤에 mb4 를 붙히면 된다.
         // 가나다 ㄱㅏㄴㅏㄷㅏ = 인코딩 방식이 다른것
         charset: "utf8",
-        collate: "utf8_general_cl",
+        collate: "utf8_general_ci",
       }
     );
   }

@@ -89,6 +89,16 @@ class User extends Sql.Model {
       }
     );
   }
+  // 1 : N(다수) (foreignkey) 외래키
+  static associate(db) {
+    // 1:N 관계 (hasMany, belongTo)
+    // 시퀄라이즈에서 1:N 관계를 hasMany 함수로 정의를 한다.
+    // hasMany 함수를 이용해서 테이블의 관계를 정의해준다.
+    // 첫번째 매개변수로 연결할 테이블
+    // sourceKey User 테이블 안에 무슨 키를 foreignKey 와 연결 할지
+    // hasMany() 첫번째로 넘겨준 테이블이 foreignkey 연결되고 foreignKey 이름은 user_id 다.
+    db.User.hasMany(db.Post, { foreignKey: "user_id", sourceKey: "id" });
+  }
 }
 
-module.exports = User // 내보내기
+module.exports = User; // 내보내기

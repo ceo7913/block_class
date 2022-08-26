@@ -33,5 +33,10 @@ db.Post = Post;
 User.init(sequelize); // 실행
 Post.init(sequelize);
 
+// 관계형 맺어주는 함수 사용
+User.associate(db)
+// 관계형 맺어주는 함수 사용
+Post.associate(db)
+
 // 보내고 싶은 값을 다 넣은 객체를 내보낸것
 module.exports = db;

@@ -1,0 +1,80 @@
+.calendar {
+  margin: 35px;
+}
+.header {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.months {
+  font-size: 50px;
+  margin-right: 15px;
+  font-weight: bold;
+}
+.right {
+  display: flex;
+  flex-direction: column;
+  font-weight: 400;
+}
+.years {
+  font-size: 20px;
+}
+.text {
+  font-size: 20px;
+}
+.days {
+  display: flex;
+}
+.days td {
+  border-bottom: 4px solid rgb(205, 241, 255);
+  width: 100px;
+  text-align: center;
+  margin: 5px;
+}
+.cd_box {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.nums {
+  display: flex;
+  margin-top: 10px;
+}
+.nums td {
+  border-bottom: 1px solid rgb(199, 199, 199);
+  width: 100px;
+  height: 50px;
+  margin: 5px;
+  font-weight: bold;
+}
+.nums td:hover {
+  color: white;
+  background-color: black;
+  cursor: pointer;
+}
+.numsLast {
+  margin-right: 561px;
+  margin-bottom: 50px;
+}
+.nums td:nth-child(1) {
+  color: red;
+}
+.nums td:nth-child(7) {
+  color: red;
+}
+body {
+  display: flex;
+  justify-content: center;
+}
+.calendar {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 4px solid rgb(205, 241, 255);
+  width: 95%;
+}
+.days td {
+  font-weight: 500;
+}

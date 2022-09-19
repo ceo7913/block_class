@@ -1,0 +1,10 @@
+.App {
+  display: flex;
+}
+.block {
+  border: 4px solid;
+}
+.block img {
+  width: 150px;
+  height: 150px;
+}

@@ -23,18 +23,16 @@ const Count = ({ count, setCount }) => {
       <h1>Count 컴포넌트</h1>
       <button
         className="transition-all font-bold hover:text-green-500 bg-green-700 p-3 m-5 rounded-xl hover:outline-green-700 hover:outline hover:bg-transparent"
-        onClick={Add}
-      >
+        onClick={Add}>
         더하기
       </button>
       <button
         className="transition-all font-bold hover:text-green-500 bg-green-700 p-3 m-5 rounded-xl hover:outline-green-700 hover:outline hover:bg-transparent"
-        onClick={Remove}
-      >
+        onClick={Remove}>
         빼기
       </button>
     </div>
-  );
+  );9*
 };
 
 export default Count;

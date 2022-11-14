@@ -51,7 +51,7 @@ export class Wallet {
         // 공개키
         this.publicKey = sender;
         // 지갑의 주소 
-        this.account = this.getAccount();
+        this.account = Wallet.getAccount(this.publicKey);
         // 서명
         this.signature = signature;
         // 화폐
@@ -83,7 +83,17 @@ export class Wallet {
         return {isError : false, value : undefined}
     }
 
-    public getAccount() : string{
-        return Buffer.from(this.publicKey).slice(26).toString();
+    static getAccount(publicKey:string) : string{
+        return Buffer.from(publicKey).slice(26).toString();
+    }
+
+    // 코인 보내는 사람의 잔액을 확인하기 위한 함수
+    static getBalance(account : string, unspentTxOuts: IUnspenTxOut[]) : number {
+        return unspentTxOuts.filter((v)=>{
+            return v.account === account;
+        }).reduce((acc,utxo)=>{
+            return(acc += utxo.amount);
+        },0)
+        // 남아있는 잔액을 확인하고 확인한 잔액으로 보낼 수 있는지 확인 하기 위해 
     }
 }

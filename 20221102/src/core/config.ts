@@ -18,7 +18,7 @@ export const GENESIS : IBlock = {
     merkleRoot : "0".repeat(64),
     difficulty : 0,
     nonce : 0,
-    data : ["The Times 03/Jan/2009 Chancellor on brink of second bailout for banks"]
+    data : []
 }
 
 // 보통 최초 블록은 하드코딩으로 만들어주는 경우가 많데요

@@ -1,5 +1,8 @@
 // 블록 타입 정의
 
+// 인터페이스로 만든 이유
+// version, height, timestamp,previousHash
+// 이런 형태로 된 클래스를 편하게 사용 하려고 만든거고 
 declare interface IBlockHeader{
     version : string;
     height : number;
@@ -7,6 +10,7 @@ declare interface IBlockHeader{
     previousHash : string;
 }
 
+// IBlock 인터페이스에 IBlockHeader 를 extends 로 상속시켜서
 declare interface IBlock extends IBlockHeader {
     merkleRoot : string;
     hash : string;
@@ -14,6 +18,20 @@ declare interface IBlock extends IBlockHeader {
     difficulty : number;
     data : string[];
 }
+
+
+// IBlock interface 
+// version : string;
+// height : number;
+// timestamp : number;
+// previousHash : string;
+// merkleRoot : string;
+// hash : string;
+// nonce : number;
+// difficulty : number;
+// data : string[];
+// 이 모양의 인터페이스가 IBlock 
+
 
 // 블록 생성을 하는 클래스를 만들때 블록 헤더 부분을 만들어주는 클래스를
 // 구분해서 따로 만들고 헤더 클래스를 상속 받아 옴

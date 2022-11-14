@@ -17,5 +17,9 @@
     "@core/*": ["src/core/*"],
     "*":["@types/*"]
   }
+ },
+ "ts-node" : {
+   "files" : true, // 전역에 d.ts 파일 사용할수 있게
+   "require" :["tsconfig-paths/register"]
  }
 }

@@ -1,29 +1,35 @@
 export class BlockHeader implements IBlockHeader {
-  public version: string;
-  public height: number;
-  public timestamp: number;
-  public previousHash: string;
+    public version: string;
+    public height: number;
+    public timestamp: number;
+    public previousHash: string;
+    // 블록을 만들때 블록의 바디와 헤더로 일단 나누어 놓았는데
+    // 우리가 이해도를 높이기 위해 명시해 놓은것
+    // 블록 하나로 되어 있는데 영역을 body 와 header 로 명시해 놓은것
+    // header 에 이전 블록의 정보가 필요하기 때문에 생성 단계에서 
+    // IBlock 의 형태인 _previousBlock 을 매개변수로 전달해주는것
+    constructor(_previousBlock : IBlock){
+        this.version = BlockHeader.getVersion();
+        this.timestamp = BlockHeader.getTimestamp();
+        // 이전 블록의 높이에서 1 을 증가시킨 값
+        this.height = _previousBlock.height + 1;
+        // 이전 블록의 해시값
+        this.previousHash = _previousBlock.hash;
+    }
 
-  constructor(_previousBlock: IBlock) {
-    this.version = BlockHeader.getVersion();
-    this.timestamp = BlockHeader.getTimestamp();
-    this.height = _previousBlock.height + 1;
-    this.previousHash = _previousBlock.hash;
-  }
+    // static메소드를 사용하면 인스턴스에 메소드가 포함되지 않아서 인스턴스 생성마다
+    // 메소드 생성되는 비효율적성을 방지 가능
+    // 클래스 내에서 함수를 만들어 사용하고 싶을때 static 메소드를 주로 활용함
+    public static getVersion() {
+        return '1.0.0';
+    }
 
-  // static메소드를 사용하면 인스턴스에 메소드가 포함되지 않아서 인스턴스 생성마다
-  // 메소드 생성되는 비효율적성을 방지 가능
-  // 클래스 내에서 함수를 만들어 사용하고 싶을때 static 메소드를 주로 활용함
-  public static getVersion() {
-    return "1.0.0";
-  }
-
-  public static getTimestamp() {
-    return new Date().getTime();
-  }
+    public static getTimestamp() {
+        return new Date().getTime();
+    }
 }
 
-// 여기서 implements는
+// 여기서 implements는 
 // extends와 implements 차이
 
 // extends : 클래스를 상속받을때 사용한다. 클래스를 정의할때 extends를 사용해서

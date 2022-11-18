@@ -318,6 +318,17 @@ Tx 0003 = {
 // dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
 
 // 설치할 수 있는 배포 목록 확인 명령어 
-// wsl -1 -o
+// wsl -l -o
 
 // wsl --install -d Ubuntu
+// 터미널 창에서 우분투 접속은 wsl 만 치면 되고
+
+// wsl 의 list 와 version 을 볼 수 있는 명령어
+// wsl -l -v
+
+// ws12 로 버전업을 할건데 
+// 링크 wslstorestorage
+
+// wsl --set-default-version Ubuntu 2
+// 이게 안되면
+// wsl --set-version Ubuntu 2

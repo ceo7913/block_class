@@ -31,8 +31,8 @@ function App() {
   return (
     <div className="App">
       <div>
-        <h1>사용자 : </h1>
-        <div>남은 금액 : </div>
+        <h1>사용자 : {account}</h1>
+        <div>남은 금액 : {balance}</div>
       </div>
       <div>
         <form onSubmit={handleSubmit}>

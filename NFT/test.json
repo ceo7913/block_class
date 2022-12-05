@@ -1,0 +1,15 @@
+{
+    "name": "soon NFT",
+    "description": "lol NFT",
+    "image": "https://gateway.pinata.cloud/ipfs/QmdNtQwSnyJYWtpCMnuPANy2EUnyX4Xsv9r1JsCq1k4rU4",
+    "attributes": [
+      {
+        "trait_type": "Rank",
+        "value": 1
+      },
+      {
+        "trait_type": "Type",
+        "value": 1
+      }
+    ]
+  }
